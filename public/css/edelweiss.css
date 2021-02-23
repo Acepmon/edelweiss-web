@@ -1,6 +1,7 @@
 /* Primary: #231F20 */
 /* Light: #BDBEC1 */
 /* Dark: #231F20 */
+/* Header: #292929 */
 
 /* ----------------------------------------------------------------
 	Typography
@@ -433,6 +434,10 @@ Main Menu
     background-color: #231F20; }
   #header #shopping-cart > a .shopping-cart-items {
     background: #231F20; }
+
+  .dark #header .header-inner, .dark #header #header-wrap, #header.dark .header-inner, #header.dark #header-wrap {
+    background-color: #292929;
+  }
 
 /* ----------------------------------------------------------------
 Dots Menu
