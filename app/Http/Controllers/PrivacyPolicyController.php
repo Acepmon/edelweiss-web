@@ -8,6 +8,6 @@ class PrivacyPolicyController extends Controller
 {
     public function index()
     {
-        // 
+        return view('privacy-policy.index');
     }
 }
