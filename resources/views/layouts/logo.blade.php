@@ -1,6 +1,6 @@
 <!--Logo-->
 <div id="logo">
-    <a href="index.html">
+    <a href="/">
         <img src="/logo/logo.png" class="logo-default">
         <img src="/logo/logo.png" class="logo-dark">
     </a>
