@@ -4,9 +4,9 @@ namespace Database\Factories;
 
 use App\Models\CommonCode;
 use App\Models\Menu;
+use App\Models\Page;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use Illuminate\Support\Arr;
 
 class MenuFactory extends Factory
 {
@@ -24,12 +24,12 @@ class MenuFactory extends Factory
      */
     public function definition()
     {
-        $name = $this->faker->text(25);
+        $page = Page::where('status_cd', '20')->inRandomOrder()->first();
         $status = CommonCode::whereNotIn('comm2_cd', ['$$'])->where('comm1_cd', 'B03')->inRandomOrder()->first();
 
         return [
-            'name' => $name,
-            'url' => url(Str::slug($name)),
+            'name' => $this->faker->text(25),
+            'url' => $page->url,
             'status_cd' => $status->comm2_cd,
         ];
     }
