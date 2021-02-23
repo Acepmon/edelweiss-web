@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(TestPageSeeder::class);
         $this->call(TestMenuSeeder::class);
         $this->call(TestFaqSeeder::class);
+        $this->call(TestBannerSeeder::class);
     }
 }
