@@ -14,6 +14,12 @@ class TestPageSeeder extends Seeder
      */
     public function run()
     {
-        Page::factory()->count(30)->create();
+        Page::factory()->count(30)->create()->each(function ($page) {
+            $page->metas()->createMany([
+                ['meta_key' => 'title', 'meta_value' => $page->title],
+                ['meta_key' => 'description', 'meta_value' => $page->subtitle],
+                ['meta_key' => 'url', 'meta_value' => $page->url],
+            ]);
+        });
     }
 }

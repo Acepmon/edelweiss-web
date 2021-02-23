@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" href="logo/logo.png">   
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Document title -->
-    <title>Edelweiss | Floral & Design</title>
+    {!! SEO::generate() !!}
     <!-- Stylesheets & Fonts -->
     <link href="css/plugins.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">

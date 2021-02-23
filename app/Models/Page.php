@@ -18,4 +18,14 @@ class Page extends Model
     {
         return $this->belongsTo('App\Models\CommonCode', 'status_cd', 'comm2_cd')->whereNotIn('comm2_cd', ['$$'])->where('comm1_cd', 'B02');
     }
+
+    public function metas()
+    {
+        return $this->hasMany('App\Models\PageMeta');
+    }
+
+    public function meta($key)
+    {
+        return $this->metas()->where('meta_key', $key)->value('meta_value');
+    }
 }
