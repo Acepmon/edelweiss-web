@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PrivacyPolicyController;
@@ -32,6 +33,7 @@ Route::get('/profile', [AccountController::class, 'profile'])->name('profile');
 Route::get('/cart', [AccountController::class, 'cart'])->name('cart');
 
 // Custom Pages
+Route::get('/faq', [FaqController::class, 'index'])->name('faq');
 Route::get('/about-us', [AboutController::class, 'index'])->name('about-us');
 Route::get('/contact-us', [ContactController::class, 'index'])->name('contact-us');
 Route::post('/contact-us', [ContactController::class, 'store'])->name('contact-us.store');

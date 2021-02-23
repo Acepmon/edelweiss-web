@@ -17,6 +17,7 @@ class CreateFaqsTable extends Migration
             $table->id();
             $table->string('question', 250);
             $table->string('answer', 250);
+            $table->string('type')->default('general'); //
             $table->timestamps();
         });
     }
