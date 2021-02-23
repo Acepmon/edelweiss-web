@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" href="logo/logo.png">   
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Document title -->
-    <title>Edelweiss | Flower Shop</title>
+    <title>Edelweiss | Floral & Design</title>
     <!-- Stylesheets & Fonts -->
     <link href="css/plugins.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -36,6 +36,8 @@
     <script src="js/plugins.js"></script>
     <!--Template functions-->
     <script src="js/functions.js"></script>
+
+    @stack('scripts')
 </body>
 
 </html>

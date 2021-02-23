@@ -34,6 +34,7 @@ Route::get('/cart', [AccountController::class, 'cart'])->name('cart');
 // Custom Pages
 Route::get('/about-us', [AboutController::class, 'index'])->name('about-us');
 Route::get('/contact-us', [ContactController::class, 'index'])->name('contact-us');
+Route::post('/contact-us', [ContactController::class, 'store'])->name('contact-us.store');
 Route::get('/sitemap', [SitemapController::class, 'index'])->name('sitemap');
 Route::get('/terms-conditions', [TermsConditionsController::class, 'terms'])->name('terms-conditions');
 Route::get('/privacy-policy', [PrivacyPolicyController::class, 'privacy'])->name('privacy-policy');

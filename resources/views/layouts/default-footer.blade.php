@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-lg-5">
                     <div class="widget">
-                        <div class="widget-title">Edelweiss - Flower Shop</div>
+                        <div class="widget-title">Edelweiss - Floral & Design</div>
                         <p class="mb-5">Built with love in Ulaanbaatar, Mongolia<br> All rights reserved. Copyright © 2021. Edelweiss.</p>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
     </div>
     <div class="copyright-content">
         <div class="container">
-            <div class="copyright-text text-center">&copy; 2021 Edelweiss - Flower Shop. All Rights Reserved.</div>
+            <div class="copyright-text text-center">&copy; 2021 Edelweiss - Floral & Design. All Rights Reserved.</div>
         </div>
     </div>
 </footer>
