@@ -3,13 +3,7 @@
     <div class="header-inner">
         <div class="container">
             <!--Logo-->
-            <div id="logo">
-                <a href="index.html">
-                    <img src="images/logo-circle.png" class="logo-default">
-                    <img src="images/logo-circle-dark.png" class="logo-dark">
-                </a>
-            </div>
-            <!--End: Logo-->
+            @include('layouts.logo')
             <!-- Search -->
             <div id="search"><a id="btn-search-close" class="btn-search-close" aria-label="Close search form"><i class="icon-x"></i></a>
                 <form class="search-form" action="search-results-page.html" method="get">
