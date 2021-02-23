@@ -1,6 +1,14 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AccountController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\PrivacyPolicyController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SitemapController;
+use App\Http\Controllers\TermsConditionsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,3 +23,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
+
+// Account
+Route::get('/login', [AccountController::class, 'login'])->name('login');
+Route::get('/register', [AccountController::class, 'register'])->name('register');
+Route::get('/logout', [AccountController::class, 'logout'])->name('logout');
+Route::get('/profile', [AccountController::class, 'profile'])->name('profile');
+Route::get('/cart', [AccountController::class, 'cart'])->name('cart');
+
+// Custom Pages
+Route::get('/about-us', [AboutController::class, 'index'])->name('about-us');
+Route::get('/contact-us', [ContactController::class, 'index'])->name('contact-us');
+Route::get('/sitemap', [SitemapController::class, 'index'])->name('sitemap');
+Route::get('/terms-conditions', [TermsConditionsController::class, 'terms'])->name('terms-conditions');
+Route::get('/privacy-policy', [PrivacyPolicyController::class, 'privacy'])->name('privacy-policy');
+
+// Product Page
+Route::get('/product/search', [ProductController::class, 'search'])->name('product.search');
+Route::get('/product/{product}', [ProductController::class, 'show'])->name('product.show');
+
+// Dynamic Pages
+Route::get('/{any}', [PageController::class, 'index'])->where('any', '.*');
