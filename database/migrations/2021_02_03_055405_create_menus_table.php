@@ -15,9 +15,11 @@ class CreateMenusTable extends Migration
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 30);
+            $table->string('name', 50);
             $table->string('url')->nullable();
             $table->unsignedBigInteger('parent_id')->nullable();
+
+            $table->string('status')->default('draft'); // draft, active
         });
     }
 

@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Models\Menu;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use Illuminate\Support\Arr;
 
 class MenuFactory extends Factory
 {
@@ -22,11 +23,12 @@ class MenuFactory extends Factory
      */
     public function definition()
     {
-        $name = $this->faker->text(30);
+        $name = $this->faker->text(25);
 
         return [
             'name' => $name,
-            'url' => Str::slug($name)
+            'url' => url(Str::slug($name)),
+            'status' => Arr::random(Menu::STATUS_ARRAY),
         ];
     }
 }

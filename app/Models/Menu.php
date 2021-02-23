@@ -11,6 +11,14 @@ class Menu extends Model
 
     public $timestamps = false;
 
+    const STATUS_DRAFT = 'draft';
+    const STATUS_ACTIVE = 'active';
+
+    const STATUS_ARRAY = [
+        self::STATUS_DRAFT,
+        self::STATUS_ACTIVE,
+    ];
+
     public function children()
     {
         return $this->hasMany(Menu::class, 'parent_id', 'id');
