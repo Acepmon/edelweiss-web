@@ -13,7 +13,7 @@
     <!-- Stylesheets & Fonts -->
     <link href="css/plugins.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/theme-edelweiss.css" rel="stylesheet">
+    <link href="css/edelweiss.css" rel="stylesheet">
 </head>
 
 <body>
