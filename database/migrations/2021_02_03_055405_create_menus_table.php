@@ -19,7 +19,7 @@ class CreateMenusTable extends Migration
             $table->string('url')->nullable();
             $table->unsignedBigInteger('parent_id')->nullable();
 
-            $table->string('status')->default('draft'); // draft, active
+            $table->string('status_cd')->default('10'); // B03
         });
     }
 

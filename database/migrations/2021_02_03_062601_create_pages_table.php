@@ -16,10 +16,13 @@ class CreatePagesTable extends Migration
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
 
-            $table->string('name');
+            $table->string('title');
+            $table->string('subtitle');
+
             $table->string('url');
             $table->string('slug');
-            $table->string('type_cd');
+            $table->string('type_cd')->default('10'); // B01
+            $table->string('status_cd')->default('10'); // B02
 
             $table->unsignedBigInteger('collection_id')->nullable();
 

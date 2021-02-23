@@ -11,14 +11,6 @@ class Menu extends Model
 
     public $timestamps = false;
 
-    const STATUS_DRAFT = 'draft';
-    const STATUS_ACTIVE = 'active';
-
-    const STATUS_ARRAY = [
-        self::STATUS_DRAFT,
-        self::STATUS_ACTIVE,
-    ];
-
     public function children()
     {
         return $this->hasMany(Menu::class, 'parent_id', 'id');
@@ -27,5 +19,10 @@ class Menu extends Model
     public function hasChildren(): bool
     {
         return $this->children->count() > 0;
+    }
+
+    public function status()
+    {
+        return $this->belongsTo('App\Models\CommonCode', 'status_cd', 'comm2_cd')->whereNotIn('comm2_cd', ['$$'])->where('comm1_cd', 'B03');
     }
 }
