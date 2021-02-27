@@ -30,7 +30,7 @@ class BannerFactory extends Factory
         return [
             'location_cd' => $location->comm2_cd,
             'status_cd' => $status->comm2_cd,
-            'banner' => url('covers/' . rand(1, 20) . '.jpg'),
+            'banner' => url('images/covers/' . rand(1, 20) . '.jpg'),
 
             'title' => $this->faker->text(20),
             'description' => $this->faker->text(100),

@@ -437,6 +437,7 @@ Main Menu
 
   .dark #header .header-inner, .dark #header #header-wrap, #header.dark .header-inner, #header.dark #header-wrap {
     background-color: #292929;
+    /* background-color: #231F20; */
   }
 
 /* ----------------------------------------------------------------

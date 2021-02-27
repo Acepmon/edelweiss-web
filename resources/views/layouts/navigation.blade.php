@@ -5,7 +5,7 @@
             <ul>
 
                 @foreach ($menus as $menu)
-                <li class="dropdown"><a href="{{ $menu->url ? $menu->url : '#' }}">{{ $menu->name }}</a>
+                <li class="dropdown"><a href="{{ $menu->url ? $menu->url : '#' }}" class="text-uppercase">{{ $menu->name }}</a>
 
                     @if ($menu->hasChildren())
                     <ul class="dropdown-menu">

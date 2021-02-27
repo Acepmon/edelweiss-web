@@ -46,6 +46,8 @@ Route::get('/privacy-policy', [PrivacyPolicyController::class, 'index'])->name('
 Route::get('/product/search', [ProductController::class, 'search'])->name('product.search');
 Route::get('/product/{product}', [ProductController::class, 'index'])->name('product.index');
 
+// Collection Page
+Route::get('/collection/{collection:slug}', [CollectionController::class, 'show'])->name('collection.show');
+
 // Dynamic Pages
-Route::get('/{page:slug}/collection/{collection}', [CollectionController::class, 'index'])->name('collection.show');
 Route::get('/{page:slug}', [PageController::class, 'index'])->where('page', '.*');

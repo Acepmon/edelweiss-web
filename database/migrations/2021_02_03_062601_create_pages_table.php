@@ -17,13 +17,12 @@ class CreatePagesTable extends Migration
             $table->id();
 
             $table->string('title', 100);
-            $table->string('subtitle', 250);
+            $table->string('subtitle', 250)->nullable();
             $table->string('cover')->nullable();
 
             $table->string('url')->nullable();
             $table->string('slug')->nullable();
 
-            $table->string('type_cd')->default('static'); // B01
             $table->string('status_cd')->default('10'); // B02
 
             $table->unsignedBigInteger('collection_id')->nullable();
@@ -32,6 +31,7 @@ class CreatePagesTable extends Migration
             // ui configs
             $table->boolean('ui_show_page_title')->default(true);
             $table->string('ui_layout')->default('container-fluid'); // E01
+            $table->string('ui_grid_columns')->default('grid-4-columns'); // E02
 
             $table->timestamps();
         });

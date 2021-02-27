@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Collection;
 use App\Models\Page;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class TestPageSeeder extends Seeder
 {
@@ -14,7 +16,7 @@ class TestPageSeeder extends Seeder
      */
     public function run()
     {
-        Page::factory()->count(30)->create()->each(function ($page) {
+        Page::factory()->count(10)->create()->each(function ($page) {
             $page->metas()->createMany([
                 ['meta_key' => 'title', 'meta_value' => $page->title],
                 ['meta_key' => 'description', 'meta_value' => $page->subtitle],

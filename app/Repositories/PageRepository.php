@@ -13,18 +13,8 @@ class PageRepository implements PageRepositoryInterface
         return Page::where('status_cd', '20')->get();
     }
 
-    public function collectionPages()
-    {
-        return Page::where('status_cd', '20')->where('type_cd', 20)->with(['collection', 'collection.products', 'collection.products.category'])->get();
-    }
-
-    public function staticPages()
-    {
-        return Page::where('status_cd', '20')->where('type_cd', 10)->get();
-    }
-
     public function getBySlug(String $slug)
     {
-        return Page::where('status_cd', '20')->where('slug', $slug)->with(['collection', 'collection.products', 'collection.products.category'])->first();
+        return Page::where('status_cd', '20')->where('slug', $slug)->first();
     }
 }

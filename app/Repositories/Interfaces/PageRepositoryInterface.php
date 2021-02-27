@@ -8,9 +8,5 @@ interface PageRepositoryInterface
 {
     public function all();
 
-    public function collectionPages();
-
-    public function staticPages();
-
     public function getBySlug(String $slug);
 }

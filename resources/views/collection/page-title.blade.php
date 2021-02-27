@@ -1,9 +1,8 @@
 <!-- Page title -->
-<section id="page-title" data-bg-parallax="{{ $page->cover }}"><div class="parallax-container img-loaded" data-bg="{{ $page->cover }}" data-velocity="-.140" style="background: url(&quot;{{ $page->cover }}&quot;) 0px;" data-ll-status="loaded"></div>
+<section id="page-title" data-bg-parallax="{{ $collection->image }}"><div class="parallax-container img-loaded" data-bg="{{ $collection->image }}" data-velocity="-.140" style="background: url(&quot;{{ $collection->image }}&quot;) 0px;" data-ll-status="loaded"></div>
     <div class="container">
         <div class="page-title">
-            <h1>{{ $page->title }}</h1>
-            <span>{{ $page->subtitle }}</span>
+            <h1>{{ $collection->title }}</h1>
         </div>
     </div>
 </section>

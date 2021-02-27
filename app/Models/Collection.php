@@ -20,4 +20,9 @@ class Collection extends Model
     {
         return $this->belongsToMany('App\Models\Product', 'collections_products');
     }
+
+    public function getImageAttribute($value)
+    {
+        return empty($value) ? asset('/images/covers/' . rand(1, 20) . '.jpg') : $value;
+    }
 }
