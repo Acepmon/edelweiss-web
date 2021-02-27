@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Collection;
 use App\Models\CommonCode;
 use App\Models\Page;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -30,6 +31,8 @@ class PageFactory extends Factory
         $prefixes = ['products/', 'collections/', 'profiles/', 'flowers/'];
         $cover = url('covers/' . rand(1, 20) . '.jpg');
 
+        $collection = Collection::inRandomOrder()->first();
+
         return [
             'title' => $title,
             'subtitle' => $this->faker->text(250),
@@ -42,6 +45,8 @@ class PageFactory extends Factory
             'type_cd' => $type->comm2_cd,
             'status_cd' => $status->comm2_cd,
             'body' => $type->comm2_cd == 'static' ? $this->faker->randomHtml(3, 4) : null,
+
+            'collection_id' => $collection->id,
         ];
     }
 }

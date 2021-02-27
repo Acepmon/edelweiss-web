@@ -28,4 +28,9 @@ class Page extends Model
     {
         return $this->metas()->where('meta_key', $key)->value('meta_value');
     }
+
+    public function collection()
+    {
+        return $this->belongsTo('App\Models\Collection');
+    }
 }

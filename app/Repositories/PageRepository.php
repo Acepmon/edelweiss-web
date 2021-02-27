@@ -15,7 +15,7 @@ class PageRepository implements PageRepositoryInterface
 
     public function collectionPages()
     {
-        return Page::where('status_cd', '20')->where('type_cd', 20)->get();
+        return Page::where('status_cd', '20')->where('type_cd', 20)->with(['collection', 'collection.products', 'collection.products.category'])->get();
     }
 
     public function staticPages()
@@ -25,6 +25,6 @@ class PageRepository implements PageRepositoryInterface
 
     public function getBySlug(String $slug)
     {
-        return Page::where('status_cd', '20')->where('slug', $slug)->first();
+        return Page::where('status_cd', '20')->where('slug', $slug)->with(['collection', 'collection.products', 'collection.products.category'])->first();
     }
 }
