@@ -16,7 +16,16 @@
             <div class="header-extras">
                 <ul>
                     <li>
-                        <a id="btn-search" href="#"> <i class="icon-search"></i></a>
+                        <a id="btn-search" href="#"><i class="icon-search"></i></a>
+                    </li>
+                    <li class="d-none d-sm-block">
+                        @include('layouts.header-item-cart')
+                    </li>
+                    <li class="d-none d-sm-block">
+                        @include('layouts.header-item-notification')
+                    </li>
+                    <li class="d-none d-sm-block">
+                        @include('layouts.header-item-user')
                     </li>
                 </ul>
             </div>

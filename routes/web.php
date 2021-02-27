@@ -29,7 +29,9 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 
 // Account
 Route::get('/login', [AccountController::class, 'login'])->name('login');
+Route::post('/login', [AccountController::class, 'auth'])->name('auth');
 Route::get('/register', [AccountController::class, 'register'])->name('register');
+Route::post('/register', [AccountController::class, 'store'])->name('register.store');
 Route::get('/logout', [AccountController::class, 'logout'])->name('logout');
 Route::get('/profile', [AccountController::class, 'profile'])->name('profile');
 

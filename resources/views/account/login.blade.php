@@ -11,14 +11,16 @@
                 <div class="row">
                     <div class="col-lg-5 center p-50 background-white b-r-6">
                         <h3>Login to your Account</h3>
-                        <form>
+                        <form action="{{ route('auth') }}" method="POST">
+                            @csrf
+
                             <div class="form-group">
-                                <label class="sr-only">Username or Email</label>
-                                <input type="text" class="form-control" placeholder="Username or Email">
+                                <label class="sr-only">Email</label>
+                                <input type="email" name="email" class="form-control" placeholder="Email" required>
                             </div>
                             <div class="form-group m-b-5">
                                 <label class="sr-only">Password</label>
-                                <input type="password" class="form-control" placeholder="Password">
+                                <input type="password" name="password" class="form-control" placeholder="Password" required>
                             </div>
                             <div class="form-group form-inline text-left">
                                 <div class="form-check">
@@ -28,10 +30,11 @@
                                 </div>
                             </div>
                             <div class="text-left form-group">
-                                <button type="button" class="btn">Login</button>
+                                <button type="submit" class="btn">Login</button>
+                                <a href="{{ route('index') }}" class="btn btn-light m-l-10">Cancel</a>
                             </div>
                         </form>
-                        <p class="small">Don't have an account yet? <a href="#">Register New Account</a>
+                        <p class="small">Don't have an account yet? <a href="{{ route('register') }}">Register New Account</a>
                         </p>
                     </div>
                 </div>
