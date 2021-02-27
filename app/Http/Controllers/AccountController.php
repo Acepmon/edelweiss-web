@@ -8,12 +8,12 @@ class AccountController extends Controller
 {
     public function login(Request $request)
     {
-        // 
+        return view('account.login');
     }
 
     public function register(Request $request)
     {
-        // 
+        return view('account.register');
     }
 
     public function logout(Request $request)
@@ -23,11 +23,6 @@ class AccountController extends Controller
 
     public function profile(Request $request)
     {
-        // 
-    }
-
-    public function cart(Request $request)
-    {
-        // 
+        return view('account.profile');
     }
 }

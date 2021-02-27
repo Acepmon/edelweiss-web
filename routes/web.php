@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PrivacyPolicyController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SitemapController;
@@ -31,7 +32,10 @@ Route::get('/login', [AccountController::class, 'login'])->name('login');
 Route::get('/register', [AccountController::class, 'register'])->name('register');
 Route::get('/logout', [AccountController::class, 'logout'])->name('logout');
 Route::get('/profile', [AccountController::class, 'profile'])->name('profile');
-Route::get('/cart', [AccountController::class, 'cart'])->name('cart');
+
+// Payment
+Route::get('/cart', [PaymentController::class, 'cart'])->name('payment.cart');
+Route::get('/checkout', [PaymentController::class, 'checkout'])->name('payment.checkout');
 
 // Custom Pages
 Route::get('/faq', [FaqController::class, 'index'])->name('faq');

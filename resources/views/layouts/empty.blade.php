@@ -26,11 +26,7 @@
     <!-- Body Inner -->
     <div class="body-inner">
 
-        @include('layouts.default-header')
-
         @yield('content')
-
-        @include('layouts.default-footer')
 
     </div>
     <!-- end: Body Inner -->
