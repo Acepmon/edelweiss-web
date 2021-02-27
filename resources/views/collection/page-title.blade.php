@@ -5,16 +5,6 @@
             <h1>{{ $page->title }}</h1>
             <span>{{ $page->subtitle }}</span>
         </div>
-        <div class="breadcrumb">
-            <ul>
-                <li><a href="#">Home</a>
-                </li>
-                <li><a href="#">Pages</a>
-                </li>
-                <li class="active"><a href="#">{{ $page->title }}</a>
-                </li>
-            </ul>
-        </div>
     </div>
 </section>
 <!-- end: Page title -->

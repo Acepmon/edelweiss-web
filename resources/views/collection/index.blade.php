@@ -1,10 +1,12 @@
 @extends('layouts.default')
 
 @section('content')
-    @include('collection.page-title', ['page' => $page])
+    @if ($page->ui_show_page_title)
+        @include('collection.page-title', ['page' => $page])
+    @endif
 
     <section id="page-content">
-        <div class="container-fluid">
+        <div class="{{ $collection->ui_grid_layout }}">
             @include('collection.collection', ['collection' => $collection])
 
             @include('collection.product-list', ['products' => $products])

@@ -29,6 +29,10 @@ class CreatePagesTable extends Migration
             $table->unsignedBigInteger('collection_id')->nullable();
             $table->text('body')->nullable();
 
+            // ui configs
+            $table->boolean('ui_show_page_title')->default(true);
+            $table->string('ui_layout')->default('container-fluid'); // E01
+
             $table->timestamps();
         });
     }

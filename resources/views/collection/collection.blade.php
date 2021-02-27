@@ -1,7 +1,7 @@
 <div class="row m-b-20">
     <div class="col-lg-6 p-t-10 m-b-20">
         <h3 class="m-b-20">{{ $collection->coll_title }}</h3>
-        <p>{{ $collection->coll_desc }}</p>
+        <p>{!! $collection->coll_desc !!}</p>
     </div>
 
     <div class="col-lg-3">

@@ -1,9 +1,15 @@
 @extends('layouts.default')
 
 @section('content')
-    
-    @include('pages.page-title', ['page' => $page])
 
-    {!! $page->body !!}
+    @if ($page->ui_show_page_title)
+        @include('pages.page-title', ['page' => $page])
+    @endif
+
+    <section>
+        <div class="{{ $page->ui_layout }}">
+            {!! $page->body !!}
+        </div>
+    </section>
 
 @endsection
