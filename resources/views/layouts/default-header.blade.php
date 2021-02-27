@@ -6,7 +6,7 @@
             @include('layouts.logo')
             <!-- Search -->
             <div id="search"><a id="btn-search-close" class="btn-search-close" aria-label="Close search form"><i class="icon-x"></i></a>
-                <form class="search-form" action="search-results-page.html" method="get">
+                <form class="search-form" action="{{ route('product.search') }}" method="get">
                     <input class="form-control" name="q" type="text" placeholder="Type & Search..." />
                     <span class="text-muted">Start typing & press "Enter" or "ESC" to close</span>
                 </form>
@@ -17,16 +17,6 @@
                 <ul>
                     <li>
                         <a id="btn-search" href="#"> <i class="icon-search"></i></a>
-                    </li>
-                    <li>
-                        <div class="p-dropdown">
-                            <a href="#"><i class="icon-globe"></i><span>EN</span></a>
-                            <ul class="p-dropdown-content">
-                                <li><a href="#">French</a></li>
-                                <li><a href="#">Spanish</a></li>
-                                <li><a href="#">English</a></li>
-                            </ul>
-                        </div>
                     </li>
                 </ul>
             </div>

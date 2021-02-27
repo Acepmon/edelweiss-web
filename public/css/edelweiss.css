@@ -530,7 +530,20 @@ Portfolio
 }
 
 .product .product-price ins {
-  color: inherit;
+  color: #231F20;
+  font-size: 16px;
+}
+
+.product .product-back-btn {
+  position: absolute;
+  left: 50;
+  top: 50;
+  z-index: 199;
+}
+
+/* Logo */
+#header.header-alternative .header-inner #logo a > img, #header.header-alternative #header-wrap #logo a > img {
+  height: 55px;
 }
 
 /*# sourceMappingURL=theme.css.map */
