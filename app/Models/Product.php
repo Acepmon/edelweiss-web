@@ -38,6 +38,7 @@ class Product extends Model
 
     public function getThumbnailAttribute()
     {
-        return url(asset('images/flowers/0.jpeg'));
+        $rand = rand(0, 105);
+        return url(asset('images/flowers/' . $rand . '.jpeg'));
     }
 }

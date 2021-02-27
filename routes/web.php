@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
@@ -46,4 +47,5 @@ Route::get('/product/search', [ProductController::class, 'search'])->name('produ
 Route::get('/product/{product}', [ProductController::class, 'show'])->name('product.show');
 
 // Dynamic Pages
-Route::get('/{any}', [PageController::class, 'index'])->where('any', '.*');
+Route::get('/{page:slug}/collections/{collection}', [CollectionController::class, 'index'])->name('collections.show');
+Route::get('/{page:slug}', [PageController::class, 'index'])->where('page', '.*');

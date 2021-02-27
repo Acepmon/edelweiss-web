@@ -516,4 +516,21 @@ Portfolio
   background-color: #231F20;
   border-color: #231F20; }
 
+/* Product */
+.product .product-title {
+  max-width: 100%;
+}
+
+.product .product-price {
+  width: 100%;
+  float: none;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+.product .product-price ins {
+  color: inherit;
+}
+
 /*# sourceMappingURL=theme.css.map */

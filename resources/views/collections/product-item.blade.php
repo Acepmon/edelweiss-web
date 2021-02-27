@@ -13,7 +13,7 @@
         <div class="product-title">
             <h3><a href="{{ route('product.show', $product->id) }}">{{ $product->product_title }}</a></h3>
         </div>
-        <div class="product-price"><ins>{{ number_format($product->product_price) }} MNT</ins></div>
     </div>
+    <div class="product-price text-muted"><ins>{{ number_format($product->product_price) }} MNT</ins></div>
 </div>
 @endif

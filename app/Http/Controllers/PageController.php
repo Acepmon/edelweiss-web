@@ -27,8 +27,15 @@ class PageController extends Controller
         SEOTools::setDescription($page->meta('description'));
         SEOTools::opengraph()->setUrl($page->meta('url'));
 
-        return view('pages.' . $page->type_cd, [
-            'page' => $page
-        ]);
+        if ($page->type_cd == 'static') {
+            return view('pages.static', [
+                'page' => $page
+            ]);
+        } else if ($page->type_cd == 'collection') {
+            return redirect()->action([CollectionController::class, 'index'], [
+                'page' => $page,
+                'collection' => $page->collection
+            ]);
+        }
     }
 }
