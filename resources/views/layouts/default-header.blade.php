@@ -1,9 +1,15 @@
 <!-- Header -->
-<header id="header" data-fullwidth="true" class="header-alternative dark">
+<header id="header" data-fullwidth="true" class="header-large header-alternative header-logo-center header-disable-fixed dark">
     <div class="header-inner">
         <div class="container">
             <!--Logo-->
             @include('layouts.logo')
+        </div>
+    </div>
+</header>
+<header id="header" data-fullwidth="true" class="header-alternative dark">
+    <div class="header-inner" style="border-bottom: 2px solid #fff">
+        <div class="container">
             <!-- Search -->
             <div id="search"><a id="btn-search-close" class="btn-search-close" aria-label="Close search form"><i class="icon-x"></i></a>
                 <form class="search-form" action="{{ route('product.search') }}" method="get">
@@ -20,9 +26,6 @@
                     </li>
                     <li class="d-none d-sm-block">
                         @include('layouts.header-item-cart')
-                    </li>
-                    <li class="d-none d-sm-block">
-                        @include('layouts.header-item-notification')
                     </li>
                     <li class="d-none d-sm-block">
                         @include('layouts.header-item-user')

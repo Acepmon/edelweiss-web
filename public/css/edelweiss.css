@@ -405,7 +405,7 @@ Main Menu
   #header #mainMenu nav > ul > li.current > span, #header #mainMenu nav > ul > li:hover > a,
   #header #mainMenu nav > ul > li:hover > span, #header #mainMenu nav > ul > li:focus > a,
   #header #mainMenu nav > ul > li:focus > span {
-    color: #231F20; }
+    color: #ffffff; }
   #header #mainMenu nav > ul > li .dropdown-menu > li > a:focus, #header #mainMenu nav > ul > li .dropdown-menu > li > a:hover, #header #mainMenu nav > ul > li .dropdown-menu > li > a:active,
   #header #mainMenu nav > ul > li .dropdown-menu > li > span:focus,
   #header #mainMenu nav > ul > li .dropdown-menu > li > span:hover,
@@ -413,14 +413,14 @@ Main Menu
   #header #mainMenu nav > ul > li .dropdown-menu > li [class*="col-"] > ul > li > a:focus,
   #header #mainMenu nav > ul > li .dropdown-menu > li [class*="col-"] > ul > li > a:hover,
   #header #mainMenu nav > ul > li .dropdown-menu > li [class*="col-"] > ul > li > a:active {
-    color: #231F20; }
+    color: #ffffff; }
   #header #mainMenu nav > ul > li .dropdown-menu > li.current > a,
   #header #mainMenu nav > ul > li .dropdown-menu > li.current > span, #header #mainMenu nav > ul > li .dropdown-menu > li:hover > a,
   #header #mainMenu nav > ul > li .dropdown-menu > li:hover > span, #header #mainMenu nav > ul > li .dropdown-menu > li:focus > a,
   #header #mainMenu nav > ul > li .dropdown-menu > li:focus > span, #header #mainMenu nav > ul > li .dropdown-menu > li:active > a,
   #header #mainMenu nav > ul > li .dropdown-menu > li:active > span, #header #mainMenu nav > ul > li .dropdown-menu > li.hover-active > a,
   #header #mainMenu nav > ul > li .dropdown-menu > li.hover-active > span {
-    color: #231F20; }
+    color: #ffffff; }
   #header #mainMenu.menu-rounded nav > ul > li.current > a, #header #mainMenu.menu-rounded nav > ul > li:hover > a, #header #mainMenu.menu-rounded nav > ul > li:focus > a {
     background-color: #231F20; }
   #header #mainMenu.menu-outline nav > ul > li.current > a, #header #mainMenu.menu-outline nav > ul > li:hover > a, #header #mainMenu.menu-outline nav > ul > li:focus > a {
@@ -439,6 +439,22 @@ Main Menu
     background-color: #292929;
     /* background-color: #231F20; */
   }
+
+#header.header-large.header-alternative,
+#header.header-large.header-alternative .header-inner, #header.header-alternative #header-wrap,
+#header.header-large.header-alternative .header-inner #logo, #header.header-alternative #header-wrap #logo {
+  height: 120px;
+}
+
+#header.header-large.header-alternative .header-inner #logo a > img, #header.header-alternative #header-wrap #logo a > img {
+  height: 80px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+#mainMenu nav > ul > li > a {
+  padding: 10px 40px;
+}
 
 /* ----------------------------------------------------------------
 Dots Menu
