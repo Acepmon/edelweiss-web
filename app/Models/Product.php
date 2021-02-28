@@ -41,4 +41,15 @@ class Product extends Model
         $rand = rand(0, 105);
         return url(asset('images/flowers/' . $rand . '.jpeg'));
     }
+
+    public function getMediasAttribute()
+    {
+        $medias = [];
+        for ($i=0; $i < rand(1, 5); $i++) {
+            $rand = rand(1, 105);
+            $img = url(asset('images/flowers/' . $rand . '.jpeg'));
+            array_push($medias, $img);
+        }
+        return $medias;
+    }
 }

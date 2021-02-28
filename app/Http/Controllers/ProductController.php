@@ -14,8 +14,11 @@ class ProductController extends Controller
         SEOTools::setDescription($product->seo->seo_desc);
         SEOTools::opengraph()->setUrl($product->seo->seo_url);
 
+        $relatedProducts = Product::inRandomOrder()->take(9)->get();
+
         return view('product.index', [
-            'product' => $product
+            'product' => $product,
+            'relatedProducts' => $relatedProducts
         ]);
     }
 
@@ -28,7 +31,7 @@ class ProductController extends Controller
 
         return view('product.search.results', [
             'query' => $query,
-            'products' => $products
+            'products' => $products,
         ]);
     }
 }

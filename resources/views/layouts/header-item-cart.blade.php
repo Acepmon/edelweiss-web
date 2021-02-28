@@ -5,7 +5,7 @@
         <div class="widget-mycart">
             <a href="{{ route('payment.cart') }}"><h4>My Cart</h4></a>
             <div class="cart-item">
-                <div class="cart-image"> <a href="#"><img src="images/shop/products/10.jpg"></a></div>
+                <div class="cart-image"> <a href="#"><img src="/images/shop/products/10.jpg"></a></div>
                 <div class="cart-product-meta">
                     <a href="#">Bolt Sweatshirt</a>
                     <span>3 x 28$</span>
@@ -14,7 +14,7 @@
                     <a href="#"><i class="icon-x"></i></a></div>
             </div>
             <div class="cart-item">
-                <div class="cart-image"> <a href="#"><img src="images/shop/products/11.jpg"></a></div>
+                <div class="cart-image"> <a href="#"><img src="/images/shop/products/11.jpg"></a></div>
                 <div class="cart-product-meta">
                     <a href="#">Yellow Sweatshirt</a>
                     <span>1 x 18$</span>

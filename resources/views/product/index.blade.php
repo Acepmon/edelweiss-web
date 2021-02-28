@@ -11,9 +11,9 @@
         </div>
     </section>
 
-    @include('product.product', ['product' => $product])
+    @include('product.product')
 
-    @include('product.related', ['product' => $product])
+    @include('product.related')
 
     @include('product.delivery')
 
