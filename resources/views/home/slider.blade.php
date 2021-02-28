@@ -1,5 +1,5 @@
 <!-- Inspiro Slider -->
-<div id="slider" class="inspiro-slider slider-fullscreen dots-creative" data-fade="true">
+<div id="slider" class="inspiro-slider dots-creative" data-fade="true">
     @foreach ($banners as $banner)
     <div class="slide kenburns" data-bg-image="{{ $banner->banner }}">
         <div class="bg-overlay"></div>
