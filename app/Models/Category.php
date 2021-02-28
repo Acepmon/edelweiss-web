@@ -12,4 +12,9 @@ class Category extends Model
     protected $connection = 'mysql_admin';
     protected $table = 'categories';
     public $timestamps = false;
+
+    public function products()
+    {
+        return $this->hasMany('App\Models\Product');
+    }
 }

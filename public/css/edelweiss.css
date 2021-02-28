@@ -547,4 +547,10 @@ Portfolio
   height: 55px;
 }
 
+.header-extras > ul > li .p-dropdown a > span {
+  top: 15px;
+  right: 0px;
+  padding: 0.2em .4em;
+}
+
 /*# sourceMappingURL=theme.css.map */

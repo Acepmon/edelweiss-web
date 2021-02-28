@@ -15,7 +15,7 @@ class CollectionController extends Controller
         SEOTools::setDescription($collection->seo->seo_desc);
         SEOTools::opengraph()->setUrl($collection->seo->seo_url);
 
-        $limit = $request->input('limit', 10);
+        $limit = $request->input('limit', 25);
         $products = $collection->products()->with(['category'])->paginate($limit);
 
         return view('collection.index', [
