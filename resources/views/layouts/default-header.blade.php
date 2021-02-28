@@ -39,7 +39,7 @@
             </div>
             <!--end: Navigation Resposnive Trigger-->
             
-            @include('layouts.navigation')
+            @include('layouts.navigation-mega')
         </div>
     </div>
 </header>

@@ -26,5 +26,6 @@ class ViewServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer('layouts.navigation', NavigationComposer::class);
+        View::composer('layouts.navigation-mega', NavigationComposer::class);
     }
 }
