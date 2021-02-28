@@ -1,15 +1,25 @@
 @extends('layouts.default')
 
 @section('content')
-    @if ($collection->ui_show_page_title)
-        @include('collection.page-title', ['collection' => $collection])
-    @endif
+    <!-- Page title -->
+    <section id="page-title" data-bg-parallax="/images/covers/9.jpg"><div class="parallax-container img-loaded" data-bg="/images/covers/9.jpg" data-velocity="-.140" style="background: url(&quot;/images/covers/9.jpg&quot;) 0px;" data-ll-status="loaded"></div>
+        <div class="container">
+            <div class="page-title">
+                <h1>Collections</h1>
+            </div>
+        </div>
+    </section>
+    <!-- end: Page title -->
 
-    <section id="page-content">
-        <div class="{{ $collection->ui_layout }}">
-            @include('collection.collection', ['collection' => $collection])
-
-            @include('collection.product-list', ['products' => $products])
+    <section>
+        <div class="container">
+            <div class="row">
+                @foreach ($collections as $collection)
+                <div class="col-lg-6">
+                    @include('collection.collection-item', ['collection' => $collection])
+                </div>
+                @endforeach
+            </div>
         </div>
     </section>
 @endsection

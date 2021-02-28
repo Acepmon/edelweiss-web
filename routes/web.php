@@ -53,6 +53,7 @@ Route::get('/product/search', [ProductController::class, 'search'])->name('produ
 Route::get('/product/{product}', [ProductController::class, 'index'])->name('product.index');
 
 // Collection Page
+Route::get('/collection', [CollectionController::class, 'index'])->name('collection.index');
 Route::get('/collection/{collection:slug}', [CollectionController::class, 'show'])->name('collection.show');
 
 // Dynamic Pages

@@ -9,6 +9,15 @@ use Artesaos\SEOTools\Facades\SEOTools;
 
 class CollectionController extends Controller
 {
+    public function index(Request $request)
+    {
+        $collections = Collection::all();
+
+        return view('collection.index', [
+            'collections' => $collections
+        ]);
+    }
+
     public function show(Request $request, Collection $collection)
     {
         SEOTools::setTitle($collection->seo->seo_title);
@@ -18,7 +27,7 @@ class CollectionController extends Controller
         $limit = $request->input('limit', 25);
         $products = $collection->products()->with(['category'])->paginate($limit);
 
-        return view('collection.index', [
+        return view('collection.show', [
             'collection' => $collection,
             'products' => $products,
         ]);
