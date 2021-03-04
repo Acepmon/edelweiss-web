@@ -36,8 +36,10 @@ Route::get('/logout', [AccountController::class, 'logout'])->name('logout');
 Route::get('/profile', [AccountController::class, 'profile'])->name('profile');
 
 // Payment
-Route::get('/cart', [PaymentController::class, 'cart'])->name('payment.cart');
-Route::get('/checkout', [PaymentController::class, 'checkout'])->name('payment.checkout');
+Route::get('/payment/cart', [PaymentController::class, 'cart'])->name('payment.cart');
+Route::get('/payment/checkout', [PaymentController::class, 'checkout'])->name('payment.checkout');
+// QPay Callback URL
+Route::get('/payment/callback/{payment}', [PaymentController::class, 'callback'])->name('payment.callback');
 
 // Custom Pages
 Route::get('/faq', [FaqController::class, 'index'])->name('faq');

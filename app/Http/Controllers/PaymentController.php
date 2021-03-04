@@ -15,4 +15,9 @@ class PaymentController extends Controller
     {
         return view('payment.checkout.index');
     }
+
+    public function callback(Request $request, $paymentId)
+    {
+        // 
+    }
 }

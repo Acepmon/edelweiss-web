@@ -30,4 +30,10 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'qpay' => [
+        'host' => env('QPAY_HOST'),
+        'username' => env('QPAY_USERNAME'),
+        'password' => env('QPAY_PASSWORD'),
+        'invoice_code' => env('QPAY_INVOICE_CODE'),
+    ],
 ];
