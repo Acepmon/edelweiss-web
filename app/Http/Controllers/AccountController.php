@@ -94,4 +94,39 @@ class AccountController extends Controller
 
         return view('account.settings');
     }
+
+    public function update(Request $request)
+    {
+        $request->validate([
+            'name' => ['required', 'string', 'max:250'],
+            'email' => ['required', 'email', 'unique:users,email,' . Auth::id()],
+        ]);
+
+        $user = Auth::user();
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+
+        if ($user->save()) {
+            return redirect()->back()->with('success', 'Successfully saved!');
+        } else {
+            return redirect()->back(422)->with('error', 'Failed to save!');
+        }
+    }
+
+    public function updatePassword(Request $request)
+    {
+        $request->validate([
+            'password' => ['required', 'string', 'min:6'],
+            'password_confirmation' => ['required', 'same:password']
+        ]);
+
+        $user = Auth::user();
+        $user->password = Hash::make($request->input('password'));
+
+        if ($user->save()) {
+            return redirect()->back()->with('success', 'Successfully changed password!');
+        } else {
+            return redirect()->back(422)->with('error', 'Failed to changed password!');
+        }
+    }
 }

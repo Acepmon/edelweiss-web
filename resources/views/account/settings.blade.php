@@ -9,8 +9,8 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-body">
-                        <h3>Account Information</h3>
-                        <div class="h5 mb-4">Please fill with your account details</div>
+                        <h3>Reset Password</h3>
+                        <div class="h5 mb-4">Please fill empty fields with correct input</div>
 
                         @if (session('success'))
                             <div class="alert alert-success">
@@ -23,43 +23,54 @@
                                 {{ session('error') }}
                             </div>
                         @endif
-
-                        <form action="{{ route('profile.update') }}" method="POST">
+                        
+                        <form action="{{ route('profile.update.password') }}" method="POST">
                             @csrf
                             @method('PUT')
 
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="name">Email</label>
-                                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ Auth::user()->name }}" placeholder="Enter name">
-                                    <small id="emailHelp" class="form-text text-muted">We'll never share
-                                        your email with anyone else.</small>
+                                    <label for="password">Password</label>
+                                    <div class="input-group show-hide-password">
+                                        <input class="form-control @error('password') is-invalid @enderror" name="password" value="" placeholder="Enter password" type="password">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="icon-eye-off" aria-hidden="true" style="cursor: pointer;"></i></span>
+                                        </div>
+                                    </div>
 
-                                    @error('name')
+                                    @error('password')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="email">Email address</label>
-                                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ Auth::user()->email }}" placeholder="Enter your email">
-                                    
-                                    @error('email')
+                                    <label for="password2">Confirm Password</label>
+                                    <div class="input-group show-hide-password">
+                                        <input class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" value="" placeholder="Enter password again" type="password">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="icon-eye-off" aria-hidden="true" style="cursor: pointer;"></i></span>
+                                        </div>
+                                    </div>
+
+                                    @error('password_confirmation')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
                             </div>
+
                             <hr>
+
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <button type="submit" class="btn btn-primary">
-                                        Save Profile
+                                        Change Password
                                     </button>
                                 </div>
                             </div>
+
                         </form>
                     </div>
                 </div>

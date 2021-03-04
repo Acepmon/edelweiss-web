@@ -33,7 +33,9 @@ Route::post('/login', [AccountController::class, 'auth'])->name('auth');
 Route::get('/register', [AccountController::class, 'register'])->name('register');
 Route::post('/register', [AccountController::class, 'store'])->name('register.store');
 Route::get('/logout', [AccountController::class, 'logout'])->name('logout');
-Route::get('/profile', [AccountController::class, 'profile'])->name('profile');
+Route::get('/profile', [AccountController::class, 'profile'])->name('profile')->middleware('auth');
+Route::put('/profile', [AccountController::class, 'update'])->name('profile.update')->middleware('auth');
+Route::put('/profile/password', [AccountController::class, 'updatePassword'])->name('profile.update.password')->middleware('auth');
 Route::get('/settings', [AccountController::class, 'settings'])->name('settings');
 
 // Payment
