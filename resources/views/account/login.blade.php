@@ -11,6 +11,19 @@
                 <div class="row">
                     <div class="col-lg-5 center p-50 background-white b-r-6">
                         <h3>Login to your Account</h3>
+
+                        @if (session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+
+                        @if (session('error'))
+                            <div class="alert alert-danger">
+                                {{ session('error') }}
+                            </div>
+                        @endif
+
                         <form action="{{ route('auth') }}" method="POST">
                             @csrf
 
