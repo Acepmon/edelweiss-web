@@ -18,6 +18,27 @@ class AccountController extends Controller
         return view('account.login');
     }
 
+    public function auth(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|string',
+            'password' => 'required|string'
+        ]);
+
+        $remember = $request->has('remember');
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials, $remember)) {
+            $request->session()->regenerate();
+
+            return redirect()->route('index');
+        }
+
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ]);
+    }
+
     public function register(Request $request)
     {
         return view('account.register');

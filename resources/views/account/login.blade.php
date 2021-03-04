@@ -29,16 +29,29 @@
 
                             <div class="form-group">
                                 <label class="sr-only">Email</label>
-                                <input type="email" name="email" class="form-control" placeholder="Email" required>
+                                <input type="email" name="email" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" placeholder="Email" required autofocus>
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
+
                             <div class="form-group m-b-5">
                                 <label class="sr-only">Password</label>
-                                <input type="password" name="password" class="form-control" placeholder="Password" required>
+                                <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" required>
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                             <div class="form-group form-inline text-left">
                                 <div class="form-check">
                                     <label>
-                                        <input type="checkbox"><small class="m-l-10"> Remember me</small>
+                                        <input type="checkbox" name="remember"><small class="m-l-10"> Remember me</small>
                                     </label>
                                 </div>
                             </div>
