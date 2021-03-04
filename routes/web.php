@@ -34,10 +34,11 @@ Route::get('/register', [AccountController::class, 'register'])->name('register'
 Route::post('/register', [AccountController::class, 'store'])->name('register.store');
 Route::get('/logout', [AccountController::class, 'logout'])->name('logout');
 Route::get('/profile', [AccountController::class, 'profile'])->name('profile');
+Route::get('/settings', [AccountController::class, 'settings'])->name('settings');
 
 // Payment
-Route::get('/payment/cart', [PaymentController::class, 'cart'])->name('payment.cart');
-Route::get('/payment/checkout', [PaymentController::class, 'checkout'])->name('payment.checkout');
+Route::get('/payment/cart', [PaymentController::class, 'cart'])->name('payment.cart')->middleware('auth');
+Route::get('/payment/checkout', [PaymentController::class, 'checkout'])->name('payment.checkout')->middleware('auth');
 // QPay Callback URL
 Route::get('/payment/callback/{payment}', [PaymentController::class, 'callback'])->name('payment.callback');
 

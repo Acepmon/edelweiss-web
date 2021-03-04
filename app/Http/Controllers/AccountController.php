@@ -85,4 +85,13 @@ class AccountController extends Controller
 
         return view('account.profile');
     }
+
+    public function settings(Request $request)
+    {
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        }
+
+        return view('account.settings');
+    }
 }
