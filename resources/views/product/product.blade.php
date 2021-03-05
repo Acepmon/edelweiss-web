@@ -75,18 +75,26 @@
                             </select>
                         </div>
                         <div class="col-lg-6">
-                            <h6>Select quantity</h6>
+                            {{-- <h6>Select quantity</h6>
                             <div class="cart-product-quantity">
                                 <div class="quantity m-l-5">
                                     <input type="button" class="minus" value="-">
                                     <input type="text" class="qty" value="1">
                                     <input type="button" class="plus" value="+">
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="col-lg-6">
-                            <h6>Add to Cart</h6>
-                            <a class="btn" href="#"><i class="icon-shopping-cart"></i> Add to cart</a>
+                            <form action="{{ route('cart.store') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id" value="{{ $product->id }}">
+                                <input type="hidden" name="name" value="{{ $product->product_title }}">
+                                <input type="hidden" name="price" value="{{ $product->product_price }}">
+
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="icon-shopping-cart mr-2"></i> Сагсанд нэмэх
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>

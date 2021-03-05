@@ -2,22 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
-    public function cart()
-    {
-        return view('payment.cart.index');
-    }
-
-    public function checkout()
-    {
-        return view('payment.checkout.index');
-    }
-
     public function callback(Request $request, $paymentId)
     {
-        // 
+        return view('checkout.index');
     }
 }

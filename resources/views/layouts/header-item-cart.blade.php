@@ -1,44 +1,48 @@
 <!--shopping cart-->
 <div id="shopping-cart" class="p-dropdown">
-    <a href="{{ route('payment.cart') }}"><span class="shopping-cart-items">8</span><i class="fa fa-shopping-cart"></i></a>
+    <a href="{{ route('cart') }}">
+        @if (Cart::count() > 0)
+            <span class="shopping-cart-items bg-warning text-dark">{{ Cart::count() }}</span>
+        @endif
+
+        <i class="fa fa-shopping-cart"></i>
+    </a>
     <div class="p-dropdown-content ">
         <div class="widget-mycart">
-            <a href="{{ route('payment.cart') }}"><h4>My Cart</h4></a>
-            <div class="cart-item">
-                <div class="cart-image"> <a href="#"><img src="/images/shop/products/10.jpg"></a></div>
-                <div class="cart-product-meta">
-                    <a href="#">Bolt Sweatshirt</a>
-                    <span>3 x 28$</span>
+            <a href="{{ route('cart') }}"><h4>Миний сагс</h4></a>
+            @foreach (Cart::content() as $item)
+                <div class="cart-item">
+                    <div class="cart-image"> <a href="{{ route('product.index', $item->id) }}"><img src="{{ $item->model->thumbnail }}"></a></div>
+                    <div class="cart-product-meta">
+                        <a href="{{ route('product.index', $item->id) }}">{{ $item->name }}</a>
+                        <span>{{ $item->qty }} x {{ $item->price }} ₮</span>
+                    </div>
+                    <div class="cart-item-remove">
+                        <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            {{-- <a href="#"><i class="icon-x"></i></a> --}}
+                            <button type="submit" class="btn btn-light btn-xs btn-icon"><i class="icon-x"></i></button>
+                        </form>
+                    </div>
                 </div>
-                <div class="cart-item-remove">
-                    <a href="#"><i class="icon-x"></i></a></div>
-            </div>
-            <div class="cart-item">
-                <div class="cart-image"> <a href="#"><img src="/images/shop/products/11.jpg"></a></div>
-                <div class="cart-product-meta">
-                    <a href="#">Yellow Sweatshirt</a>
-                    <span>1 x 18$</span>
-                </div>
-                <div class="cart-item-remove">
-                    <a href="#"><i class="icon-x"></i></a></div>
-            </div>
+            @endforeach
             <hr>
             <div class="cart-total">
                 <div class="cart-total-labels">
-                    <span>Subtotal</span>
-                    <span>Taxes</span>
-                    <span><strong>Total</strong></span>
+                    <span>Нийт</span>
+                    <span>НӨАТ</span>
+                    <span><strong>Төлөх дүн</strong></span>
                 </div>
                 <div class="cart-total-prices">
-                    <span>320$</span>
-                    <span>8%</span>
-                    <span><strong>385$</strong></span>
+                    <span>{{ Cart::subtotal() }} ₮</span>
+                    <span>{{ Cart::tax() }} ₮</span>
+                    <span><strong>{{ Cart::total() }} ₮</strong></span>
                 </div>
 
             </div>
             <div class="cart-buttons text-right">
-                <button class="btn btn-xs">Checkout</button>
-
+                <a href="{{ route('checkout') }}" class="btn btn-xs">Худалдан авах</a>
             </div>
         </div>
     </div>

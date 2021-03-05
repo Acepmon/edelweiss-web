@@ -1,36 +1,35 @@
-<h4>Cart Subtotal</h4>
 <table class="table">
     <tbody>
         <tr>
             <td class="cart-product-name">
-                <strong>Cart Subtotal</strong>
+                <strong>Нийт</strong>
             </td>
             <td class="cart-product-name text-right">
-                <span class="amount">$125.96</span>
+                <span class="amount">{{ Cart::subtotal() }} ₮</span>
             </td>
         </tr>
         <tr>
             <td class="cart-product-name">
-                <strong>Shipping</strong>
+                <strong>НӨАТ</strong>
             </td>
             <td class="cart-product-name  text-right">
-                <span class="amount">Free Shipping</span>
+                <span class="amount">{{ Cart::tax() }} ₮</span>
             </td>
         </tr>
         <tr>
             <td class="cart-product-name">
-                <strong>Coupon</strong>
+                <strong>Хөнгөлөлт</strong>
             </td>
             <td class="cart-product-name  text-right">
-                <span class="amount">-20%</span>
+                <span class="amount">0%</span>
             </td>
         </tr>
         <tr>
             <td class="cart-product-name">
-                <strong>Total</strong>
+                <strong>Төлөх дүн</strong>
             </td>
             <td class="cart-product-name text-right">
-                <span class="amount color lead"><strong>$100.76</strong></span>
+                <span class="amount color lead"><strong>{{ Cart::total() }} ₮</strong></span>
             </td>
         </tr>
     </tbody>

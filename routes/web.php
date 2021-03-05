@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqController;
@@ -12,6 +14,7 @@ use App\Http\Controllers\PrivacyPolicyController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\TermsConditionsController;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,9 +41,17 @@ Route::put('/profile', [AccountController::class, 'update'])->name('profile.upda
 Route::put('/profile/password', [AccountController::class, 'updatePassword'])->name('profile.update.password')->middleware('auth');
 Route::get('/settings', [AccountController::class, 'settings'])->name('settings');
 
-// Payment
-Route::get('/payment/cart', [PaymentController::class, 'cart'])->name('payment.cart')->middleware('auth');
-Route::get('/payment/checkout', [PaymentController::class, 'checkout'])->name('payment.checkout')->middleware('auth');
+// Cart
+Route::get('/cart', [CartController::class, 'index'])->name('cart');
+Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
+Route::put('/cart/{product}', [CartController::class, 'update'])->name('cart.update');
+Route::delete('/cart/{product}', [CartController::class, 'destroy'])->name('cart.destroy');
+Route::delete('/cart', [CartController::class, 'destroyAll'])->name('cart.destroy.all');
+
+// Checkout
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout')->middleware('auth');
+Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store')->middleware('auth');
+
 // QPay Callback URL
 Route::get('/payment/callback/{payment}', [PaymentController::class, 'callback'])->name('payment.callback');
 
