@@ -37,7 +37,7 @@ class CheckoutController extends Controller
 
         if ($customer->invoices()->count() > 0) {
             $invoiceCnt = $customer->invoices()->count() + 1;
-            $invoiceNo = $setting->prefix . str_pad($invoiceCnt, $setting->sequence_character, "0", STR_PAD_LEFT);
+            $invoiceNo = $setting->prefix .  $customer->id . '-' . str_pad($invoiceCnt, $setting->sequence_character, "0", STR_PAD_LEFT);
             // $invoiceNo = $setting->prefix . $customer->id . '-' . (intval($setting->number_sequence) + $customer->invoices()->count());
         }
 
@@ -46,7 +46,7 @@ class CheckoutController extends Controller
         $invoice->invoice_code = config('services.qpay.invoice_code');
         $invoice->invoice_id = null;
         $invoice->invoice_receiver_code = $customer->id;
-        $invoice->invoice_description = 'нэхэмжлэх';
+        $invoice->invoice_description = $invoiceNo;
         $invoice->invoice_due_date = null;
         $invoice->expiry_date = now()->addDays(1);
         $invoice->amount = floatval(Cart::total(2, '.', ''));
@@ -77,7 +77,7 @@ class CheckoutController extends Controller
             $invoice->invoice_id = $qpayJson['invoice_id'];
             $invoice->qr_text = $qpayJson['qr_text'];
             $invoice->qr_image = $qpayJson['qr_image'];
-            $invoice->urls = json_encode($qpayJson['urls']);
+            $invoice->urls = $qpayJson['urls'];
             $invoice->save();
 
             $order = new Order();

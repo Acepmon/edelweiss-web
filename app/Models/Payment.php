@@ -15,6 +15,7 @@ class Payment extends Model
     protected $connection = 'mysql_admin';
     public $timestamps = false;
     public $incrementing = false;
+    protected $guarded = [];
 
     public function invoice()
     {

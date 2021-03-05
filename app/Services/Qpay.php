@@ -74,4 +74,20 @@ class Qpay {
     {
         return route('payment.callback', $paymentId);
     }
+
+    public function paymentCheck($invoiceId)
+    {
+        $url = $this->host . '/payment/check';
+        $body = [
+            'object_type' => 'INVOICE',
+            'object_id' => $invoiceId,
+            'offset' => [
+                'page_number' => 1,
+                'page_limit' => 100
+            ]
+        ];
+        $response = Http::withToken($this->accessToken)->retry(3, 100)->post($url, $body);
+
+        return $response;
+    }
 }
