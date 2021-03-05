@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -47,19 +48,33 @@ class AccountController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => ['required', 'string', 'max:250'],
+            'first_name' => ['nullable', 'string', 'max:250'],
+            'last_name' => ['nullable', 'string', 'max:250'],
             'email' => ['required', 'email', 'unique:users,email'],
             'password' => ['required', 'string', 'min:6'],
             'password_confirmation' => ['required', 'same:password']
         ]);
 
         $user = new User([
-            'name'  => $request->input('name'),
+            'first_name'  => $request->input('first_name'),
+            'last_name'  => $request->input('last_name'),
             'email' => $request->input('email'),
             'password' => Hash::make($request->input('password')),
+            'agreed_marketing_email' => true,
+            'tax_exempt' => false,
         ]);
 
         if ($user->save()) {
+            $user->customer()->create([
+                'first_name'  => $request->input('first_name'),
+                'last_name'  => $request->input('last_name'),
+                'email' => $request->input('email'),
+                'agreed_marketing_email' => true,
+                'tax_exempt' => false,
+                'subscription_status_cd' => '30',
+                'account_status_cd' => '10'
+            ]);
+
             return redirect()->route('login')->with('success', 'Successfully registered!');
         } else {
             return redirect()->back(422)->with('error', 'Failed to register!');
@@ -98,15 +113,23 @@ class AccountController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'name' => ['required', 'string', 'max:250'],
+            'first_name' => ['nullable', 'string', 'max:250'],
+            'last_name' => ['nullable', 'string', 'max:250'],
             'email' => ['required', 'email', 'unique:users,email,' . Auth::id()],
         ]);
 
         $user = Auth::user();
-        $user->name = $request->input('name');
+        $user->first_name = $request->input('first_name');
+        $user->last_name = $request->input('last_name');
         $user->email = $request->input('email');
 
         if ($user->save()) {
+            $user->customer()->update([
+                'first_name'  => $request->input('first_name'),
+                'last_name'  => $request->input('last_name'),
+                'email' => $request->input('email'),
+            ]);
+
             return redirect()->back()->with('success', 'Successfully saved!');
         } else {
             return redirect()->back(422)->with('error', 'Failed to save!');

@@ -40,6 +40,8 @@ Route::get('/profile', [AccountController::class, 'profile'])->name('profile')->
 Route::put('/profile', [AccountController::class, 'update'])->name('profile.update')->middleware('auth');
 Route::put('/profile/password', [AccountController::class, 'updatePassword'])->name('profile.update.password')->middleware('auth');
 Route::get('/settings', [AccountController::class, 'settings'])->name('settings');
+Route::get('/orders', [AccountController::class, 'orders'])->name('orders');
+Route::get('/orders/{order}', [AccountController::class, 'order'])->name('orders.show');
 
 // Cart
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
@@ -53,7 +55,8 @@ Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout')-
 Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store')->middleware('auth');
 
 // QPay Callback URL
-Route::get('/payment/callback/{payment}', [PaymentController::class, 'callback'])->name('payment.callback');
+Route::get('/payment/{invoice}', [PaymentController::class, 'invoice'])->name('payment.invoice');
+Route::get('/payment/callback/{invoice}', [PaymentController::class, 'callback'])->name('payment.callback');
 
 // Custom Pages
 Route::get('/faq', [FaqController::class, 'index'])->name('faq');

@@ -15,7 +15,7 @@
 
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <h3>Register New Account</h3>
+                                    <h3>Шинээр бүртгүүлэх</h3>
                                     <p>Create an account by entering the information below. If you are a returning customer please login at the top of the page.</p>
                                 </div>
 
@@ -31,19 +31,31 @@
                                     </div>
                                 @endif
 
-                                <div class="col-lg-12 form-group">
-                                    <label class="sr-only">Name</label>
-                                    <input type="text" name="name" value="{{ old('name') }}" placeholder="Full Name" class="form-control @error('name') is-invalid @enderror" required>
+                                <div class="col-lg-6 form-group">
+                                    <label class="sr-only">Нэр</label>
+                                    <input type="text" name="first_name" value="{{ old('first_name') }}" placeholder="Нэр" class="form-control @error('first_name') is-invalid @enderror">
 
-                                    @error('name')
+                                    @error('first_name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
+
+                                <div class="col-lg-6 form-group">
+                                    <label class="sr-only">Овог</label>
+                                    <input type="text" name="last_name" value="{{ old('last_name') }}" placeholder="Овог" class="form-control @error('last_name') is-invalid @enderror">
+
+                                    @error('last_name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+
                                 <div class="col-lg-12 form-group">
-                                    <label class="sr-only">Email</label>
-                                    <input type="email" name="email" value="{{ old('email') }}" placeholder="Email" class="form-control @error('email') is-invalid @enderror" required>
+                                    <label class="sr-only">Имэйл <span class="text-danger">*</span></label>
+                                    <input type="email" name="email" value="{{ old('email') }}" placeholder="Имэйл" class="form-control @error('email') is-invalid @enderror" required>
 
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -51,9 +63,10 @@
                                         </span>
                                     @enderror
                                 </div>
+
                                 <div class="col-lg-6 form-group">
-                                    <label class="sr-only">Password</label>
-                                    <input type="password" name="password" value="" placeholder="Password" class="form-control @error('password') is-invalid @enderror" required>
+                                    <label class="sr-only">Нууц үг</label>
+                                    <input type="password" name="password" value="" placeholder="Нууц үг" class="form-control @error('password') is-invalid @enderror" required>
 
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -61,9 +74,10 @@
                                         </span>
                                     @enderror
                                 </div>
+
                                 <div class="col-lg-6 form-group">
-                                    <label class="sr-only">Password Confirmation</label>
-                                    <input type="password" name="password_confirmation" value="" placeholder="Confirm Password" class="form-control @error('password_confirmation') is-invalid @enderror" required>
+                                    <label class="sr-only">Нууц үг давтах</label>
+                                    <input type="password" name="password_confirmation" value="" placeholder="Нууц үг давтах" class="form-control @error('password_confirmation') is-invalid @enderror" required>
 
                                     @error('password_confirmation')
                                         <span class="invalid-feedback" role="alert">
@@ -71,9 +85,16 @@
                                         </span>
                                     @enderror
                                 </div>
+
                                 <div class="col-lg-12 form-group">
-                                    <button class="btn" type="submit">Register New Account </button>
-                                    <a href="{{ route('index') }}" class="btn btn-light m-l-10">Cancel</a>
+                                    <span class="text-muted small">
+                                        Та бүртгүүлсэнээр Edelweiss-н <a href="{{ route('terms-conditions') }}">Үйлчилгээний нөхцөл</a> болон <a href="{{ route('privacy-policy') }}">Нууцлалын бодлогыг</a> хүлээн зөвшөөрч буй болно.
+                                    </span>
+                                </div>
+
+                                <div class="col-lg-12 form-group">
+                                    <button class="btn" type="submit">Бүртгүүлэх</button>
+                                    <a href="{{ route('index') }}" class="btn btn-light m-l-10">Цуцлах</a>
                                 </div>
                             </div>
                         </form>

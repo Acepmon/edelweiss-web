@@ -232,7 +232,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
-        'Qpay' => App\Services\Facade\QpayFacade::class,
+        'Qpay' => App\Services\Facades\Qpay::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
 
     ],

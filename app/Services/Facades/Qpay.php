@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Services\Facade;
+namespace App\Services\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class QpayFacade extends Facade
+class Qpay extends Facade
 {
     protected static function getFacadeAccessor()
     {

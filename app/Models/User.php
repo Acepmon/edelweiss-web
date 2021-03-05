@@ -17,9 +17,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
         'email',
         'password',
+        'agreed_marketing_email',
+        'tax_exempt',
     ];
 
     /**
@@ -40,4 +43,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getNameAttribute()
+    {
+        return trim($this->first_name . ' ' . $this->last_name);
+    }
+
+    public function customer()
+    {
+        return $this->hasOne('App\Models\Customer');
+    }
 }

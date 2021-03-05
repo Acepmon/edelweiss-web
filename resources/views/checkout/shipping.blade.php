@@ -4,11 +4,11 @@
     </div>
     <div class="col-lg-6 form-group">
         <label class="text-dark font-weight-bold">Нэр</label>
-        <input type="text" class="form-control" placeholder="Нэр" name="first_name" value="" required>
+        <input type="text" class="form-control" placeholder="Нэр" name="first_name" value="{{ Auth::user()->first_name }}" required>
     </div>
     <div class="col-lg-6 form-group">
         <label class="text-dark font-weight-bold">Овог</label>
-        <input type="text" class="form-control" placeholder="Овог" name="last_name" value="" required>
+        <input type="text" class="form-control" placeholder="Овог" name="last_name" value="{{ Auth::user()->last_name }}" required>
     </div>
 
     <div class="col-lg-6 form-group">
@@ -17,7 +17,7 @@
     </div>
     <div class="col-lg-6 form-group">
         <label class="text-dark font-weight-bold">Утасны дугаар</label>
-        <input type="text" class="form-control" placeholder="Утасны дугаар" name="phone" value="" required>
+        <input type="text" class="form-control" placeholder="Утасны дугаар" name="phone_number" value="{{ Auth::user()->phone_number }}" required>
     </div>
     
     <div class="col-lg-6 form-group">
