@@ -4,12 +4,38 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 class Product extends Model
 {
-    use HasFactory;
+    use HasFactory, Searchable;
 
     protected $connection = 'mysql_admin';
+
+    public function isDraft()
+    {
+        return $this->product_status_cd == '10';
+    }
+
+    public function isActive()
+    {
+        return $this->product_status_cd == '20';
+    }
+
+    public function isArchived()
+    {
+        return $this->product_status_cd == '30';
+    }
+
+    public function searchableAs()
+    {
+        return config('scout.prefix') . 'products';
+    }
+
+    public function shouldBeSearchable()
+    {
+        return $this->isActive();
+    }
 
     public function product_status()
     {

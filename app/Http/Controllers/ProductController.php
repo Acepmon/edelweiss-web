@@ -25,7 +25,7 @@ class ProductController extends Controller
     public function search(Request $request)
     {
         $query = $request->input('q');
-        $products = Product::where('product_title', 'LIKE', '%' . $query . '%')->paginate(12);
+        $products = Product::search($query)->paginate(12);
 
         $products->appends(['q' => $query]);
 
