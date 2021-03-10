@@ -2,7 +2,9 @@
 
 @section('content')
     
-    @include('home.slider')
+    @if ($banners->count() > 0)
+        @include('home.slider')
+    @endif
 
     @include('home.boxes')
 
@@ -12,6 +14,8 @@
 
     @include('home.widget-product')
 
-    @include('home.categories')
+    @if ($categories->count() > 0)
+        @include('home.categories')
+    @endif
 
 @endsection
