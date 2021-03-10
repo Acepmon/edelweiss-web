@@ -4,7 +4,10 @@
         <a href="{{ route('product.index', $product) }}"><img alt="Shop product image!" src="{{ $product->thumbnail }}"></a>
     </div>
     <div class="product-description">
-        <div class="product-category">{{ $product->category->name }}</div>
+        @if ($product->category)
+            <div class="product-category">{{ $product->category->name }}</div>
+        @endif
+
         <div class="product-title">
             <h3><a href="{{ route('product.index', $product) }}">{{ $product->product_title }}</a></h3>
         </div>

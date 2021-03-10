@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\ContactController;
@@ -74,6 +75,10 @@ Route::get('/product/{product}', [ProductController::class, 'index'])->name('pro
 // Collection Page
 Route::get('/collection', [CollectionController::class, 'index'])->name('collection.index');
 Route::get('/collection/{collection:slug}', [CollectionController::class, 'show'])->name('collection.show');
+
+// Category Page
+Route::get('/categories', [CategoryController::class, 'index'])->name('category.index');
+Route::get('/categories/{category}', [CategoryController::class, 'show'])->name('category.show');
 
 // Dynamic Pages
 Route::get('/{page:slug}', [PageController::class, 'index'])->where('page', '.*');
