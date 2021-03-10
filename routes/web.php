@@ -47,6 +47,7 @@ Route::get('/orders/{order}', [AccountController::class, 'order'])->name('orders
 // Cart
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
+Route::post('/cart/batch', [CartController::class, 'storeBatch'])->name('cart.store.batch');
 Route::put('/cart/{product}', [CartController::class, 'update'])->name('cart.update');
 Route::delete('/cart/{product}', [CartController::class, 'destroy'])->name('cart.destroy');
 Route::delete('/cart', [CartController::class, 'destroyAll'])->name('cart.destroy.all');

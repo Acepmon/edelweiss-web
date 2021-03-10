@@ -97,6 +97,11 @@
                             </form>
                         </div>
                     </div>
+
+                    @if ($product->fbt()->count() > 0)
+                        <hr>
+                        @include('product.fbt')
+                    @endif
                 </div>
             </div>
 
