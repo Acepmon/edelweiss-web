@@ -69,6 +69,9 @@ Route::get('/sitemap', [SitemapController::class, 'index'])->name('sitemap');
 Route::get('/terms-conditions', [TermsConditionsController::class, 'index'])->name('terms-conditions');
 Route::get('/privacy-policy', [PrivacyPolicyController::class, 'index'])->name('privacy-policy');
 
+// Blog
+Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+
 // Product Page
 Route::get('/product/search', [ProductController::class, 'search'])->name('product.search');
 Route::get('/product/{product}', [ProductController::class, 'index'])->name('product.index');
