@@ -551,6 +551,10 @@ Portfolio
   font-size: 16px;
 }
 
+.product .product-price.product-price-sm ins {
+  font-size: 14px;
+}
+
 .product .product-back-btn {
   position: absolute;
   left: 50;

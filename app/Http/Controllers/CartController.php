@@ -29,6 +29,30 @@ class CartController extends Controller
         return redirect()->route('cart')->with('success', 'Item was added to your cart!');
     }
 
+    public function storeBatch(Request $request)
+    {
+        $request->validate([
+            'product_id' => 'required|array'
+        ]);
+
+        foreach ($request->input('product_id') as $index => $id) {
+            $product = Product::find($id);
+
+            if (!empty($product)) {
+                $duplicates = Cart::search(function ($cartItem, $rowId) use ($request) {
+                    return $cartItem->id === $request->id;
+                });
+        
+                if (!$duplicates->isNotEmpty()) {
+                    Cart::add($product->id, $product->product_title, 1, $product->product_price)
+                        ->associate('App\Models\Product');
+                }
+            }
+        }
+
+        return redirect()->route('cart')->with('success', 'Item was added to your cart!');
+    }
+
     public function update(Request $request, $rowId)
     {
         Cart::update($rowId, $request->qty);
