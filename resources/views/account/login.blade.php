@@ -10,7 +10,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-5 center p-50 background-white b-r-6">
-                        <h3>Login to your Account</h3>
+                        <h3>Нэвтрэх</h3>
 
                         @if (session('success'))
                             <div class="alert alert-success">
@@ -28,8 +28,8 @@
                             @csrf
 
                             <div class="form-group">
-                                <label class="sr-only">Email</label>
-                                <input type="email" name="email" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" placeholder="Email" required autofocus>
+                                <label class="sr-only">Имэйл хаяг</label>
+                                <input type="email" name="email" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" placeholder="Имэйл хаяг" required autofocus>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -39,8 +39,8 @@
                             </div>
 
                             <div class="form-group m-b-5">
-                                <label class="sr-only">Password</label>
-                                <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" required>
+                                <label class="sr-only">Нууц үг</label>
+                                <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Нууц үг" required>
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -51,16 +51,16 @@
                             <div class="form-group form-inline text-left">
                                 <div class="form-check">
                                     <label>
-                                        <input type="checkbox" name="remember"><small class="m-l-10"> Remember me</small>
+                                        <input type="checkbox" name="remember"><small class="m-l-10"> Намайг сана</small>
                                     </label>
                                 </div>
                             </div>
                             <div class="text-left form-group">
-                                <button type="submit" class="btn">Login</button>
-                                <a href="{{ route('index') }}" class="btn btn-light m-l-10">Cancel</a>
+                                <button type="submit" class="btn">Нэвтрэх</button>
+                                <a href="{{ route('index') }}" class="btn btn-light m-l-10">Цуцлах</a>
                             </div>
                         </form>
-                        <p class="small">Don't have an account yet? <a href="{{ route('register') }}">Register New Account</a>
+                        <p class="small">Бүртгэл үүсгэгүй юу? <a href="{{ route('register') }}">Шинээр бүртгүүлэх</a>
                         </p>
                     </div>
                 </div>

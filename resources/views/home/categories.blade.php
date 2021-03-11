@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="heading-text heading-line text-center">
-                    <h4>Browser our categories </h4>
+                    <h4>{{ __('Browse our categories') }}</h4>
                 </div>
 
             </div>

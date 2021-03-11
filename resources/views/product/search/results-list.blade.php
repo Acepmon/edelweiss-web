@@ -2,8 +2,12 @@
     <div class="container">
         <div class="row m-b-20">
             <div class="col-lg-12 p-t-10 m-b-20">
-                <h3 class="m-b-20">Search results for "{{ $query }}"</h3>
-                <span class="text-muted">{{ number_format($products->total()) }} results</span>
+                <h3 class="m-b-20">
+                    {{ __('edelweiss.search.results_query', ['query' => $query]) }}
+                </h3>
+                <span class="text-muted">
+                    {{ __('edelweiss.search.results_count', ['count' => number_format($products->total())]) }}
+                </span>
             </div>
         </div>
         <!--Product list-->

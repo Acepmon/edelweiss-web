@@ -1,10 +1,10 @@
 <div class="row m-b-20">
-    <div class="col-lg-6 p-t-10 m-b-20">
+    <div class="col-lg-10 p-t-10 m-b-20">
         <h3 class="m-b-20">{{ $collection->title }}</h3>
         <p>{!! $collection->desc !!}</p>
     </div>
 
-    <div class="col-lg-3">
+    {{-- <div class="col-lg-3">
         <div class="order-select">
             <h6>Sort by</h6>
             <p>Showing 1–12 of 25 results</p>
@@ -33,5 +33,5 @@
                 </select>
             </form>
         </div>
-    </div>
+    </div> --}}
 </div>

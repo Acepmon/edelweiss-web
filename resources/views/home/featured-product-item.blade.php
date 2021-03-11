@@ -5,7 +5,7 @@
             <img alt="Shop product image!" src="{{ $product->thumbnail }}">
         </a>
         <div class="product-overlay">
-            <a href="shop-product-ajax-page.html" data-lightbox="ajax">Quick View</a>
+            <a href="shop-product-ajax-page.html" data-lightbox="ajax">{{ __('Quick View') }}</a>
         </div>
     </div>
     <div class="product-description">

@@ -9,8 +9,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-body">
-                        <h3>Account Information</h3>
-                        <div class="h5 mb-4">Please fill with your account details</div>
+                        <h3>{{ __('Account Information') }}</h3>
 
                         @if (session('success'))
                             <div class="alert alert-success">
@@ -68,7 +67,7 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <button type="submit" class="btn btn-primary">
-                                        Save Profile
+                                        {{ __('Save') }}
                                     </button>
                                 </div>
                             </div>

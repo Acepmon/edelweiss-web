@@ -33,7 +33,7 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-6">
-                            <h6>Select the size</h6>
+                            <h6>{{ __('Select the size') }}</h6>
                             <ul class="product-size">
                                 <li>
                                     <label>
@@ -63,7 +63,7 @@
                             </ul>
                         </div>
                         <div class="col-lg-6">
-                            <h6>Select the color</h6>
+                            <h6>{{ __('Select the color') }}</h6>
                             <label class="sr-only">Color</label>
                             <select style="padding:10px">
                                 <option value="">Select color…</option>
@@ -92,7 +92,7 @@
                                 <input type="hidden" name="price" value="{{ $product->product_price }}">
 
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="icon-shopping-cart mr-2"></i> Сагсанд нэмэх
+                                    <i class="icon-shopping-cart mr-2"></i> {{ __('Add to cart') }}
                                 </button>
                             </form>
                         </div>

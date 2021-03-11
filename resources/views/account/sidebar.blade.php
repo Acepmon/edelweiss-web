@@ -6,15 +6,15 @@
     <div class="list-group list-group-flush">
         <a href="{{ route('profile') }}" class="list-group-item list-group-item-action border-top {{ request()->routeIs('profile') ? 'active' : '' }}">
             <i class="icon-user mr-2"></i>
-            My Profile
+            {{ __('My Profile') }}
         </a>
         <a href="{{ route('settings') }}" class="list-group-item list-group-item-action {{ request()->routeIs('settings') ? 'active' : '' }}">
             <i class="icon-settings mr-2"></i>
-            Settings
+            {{ __('Settings') }}
         </a>
         <a href="{{ route('logout') }}" class="list-group-item list-group-item-action">
             <i class="icon-log-out mr-2"></i>
-            Sign out
+            {{ __('Sign out') }}
         </a>
     </div>
 </div>

@@ -2,7 +2,7 @@
 <div class="tabs tabs-folder">
     <ul class="nav nav-tabs" id="myTab3" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active show" id="home-tab" data-toggle="tab" href="#home3" role="tab" aria-controls="home" aria-selected="false"><i class="fa fa-align-justify"></i>Description</a>
+            <a class="nav-link active show" id="home-tab" data-toggle="tab" href="#home3" role="tab" aria-controls="home" aria-selected="false"><i class="fa fa-align-justify"></i>{{ __('Description') }}</a>
         </li>
         
     </ul>
@@ -14,28 +14,28 @@
 </div>
 
 <h5 class="mt-4">
-    Additional Info
+    {{ __('Additional Info') }}
 </h4>
 <table class="table">
     <tbody>
         <tr>
-            <td>Size</td>
+            <td>{{ __('Size') }}</td>
             <td>Small, Medium &amp; Large</td>
         </tr>
         <tr>
-            <td>Color</td>
+            <td>{{ __('Color') }}</td>
             <td>Pink &amp; White</td>
         </tr>
         <tr>
-            <td>Width</td>
+            <td>{{ __('Width') }}</td>
             <td>26 cm</td>
         </tr>
         <tr>
-            <td>Length</td>
+            <td>{{ __('Length') }}</td>
             <td>40 cm</td>
         </tr>
         <tr>
-            <td>Stems</td>
+            <td>{{ __('Stems') }}</td>
             <td>Carnation, Daisy, Rose</td>
         </tr>
     </tbody>

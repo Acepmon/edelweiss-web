@@ -436,7 +436,8 @@ Main Menu
     background: #231F20; }
 
   .dark #header .header-inner, .dark #header #header-wrap, #header.dark .header-inner, #header.dark #header-wrap {
-    background-color: #292929;
+    background-color: #000000;
+    /* background-color: #292929; */
     /* background-color: #231F20; */
   }
 

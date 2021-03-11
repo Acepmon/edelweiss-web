@@ -2,7 +2,7 @@
 <section class="p-t-0">
     <div class="container">
         <div class="heading-text heading-line text-center">
-            <h4>Танд санал болгох бараа!</h4>
+            <h4>{{ __('Recommended products') }}</h4>
         </div>
         <div class="row">
             @foreach ($relatedProducts->chunk(3) as $chunk)

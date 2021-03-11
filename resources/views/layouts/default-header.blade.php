@@ -10,14 +10,8 @@
 <header id="header" data-fullwidth="true" class="header-alternative dark">
     <div class="header-inner" style="border-bottom: 2px solid #fff">
         <div class="container">
-            <!-- Search -->
-            <div id="search"><a id="btn-search-close" class="btn-search-close" aria-label="Close search form"><i class="icon-x"></i></a>
-                <form class="search-form" action="{{ route('product.search') }}" method="get">
-                    <input class="form-control" name="q" type="text" placeholder="Type & Search..." />
-                    <span class="text-muted">Start typing & press "Enter" or "ESC" to close</span>
-                </form>
-            </div>
-            <!-- end: search -->
+            @include('layouts.header-item-search')
+
             <!--Header Extras-->
             <div class="header-extras">
                 <ul>

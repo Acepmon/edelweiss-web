@@ -16,7 +16,11 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <h3>Шинээр бүртгүүлэх</h3>
-                                    <p>Create an account by entering the information below. If you are a returning customer please login at the top of the page.</p>
+                                    <p>
+                                        Доорх мэдээллийг оруулсанаар профайл үүсгэх. 
+                                        Хэрэв та буцаж ирсэн үйлчлүүлэгч бол хуудасны 
+                                        дээд хэсэгт нэвтрэх боломжтой.
+                                    </p>
                                 </div>
 
                                 @if (session('success'))
@@ -55,7 +59,7 @@
 
                                 <div class="col-lg-12 form-group">
                                     <label class="sr-only">Имэйл <span class="text-danger">*</span></label>
-                                    <input type="email" name="email" value="{{ old('email') }}" placeholder="Имэйл" class="form-control @error('email') is-invalid @enderror" required>
+                                    <input type="email" name="email" value="{{ old('email') }}" placeholder="Имэйл хаяг" class="form-control @error('email') is-invalid @enderror" required>
 
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">

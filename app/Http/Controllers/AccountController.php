@@ -36,7 +36,7 @@ class AccountController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'email' => __('The provided credentials do not match our records.'),
         ]);
     }
 
@@ -75,9 +75,9 @@ class AccountController extends Controller
                 'account_status_cd' => '10'
             ]);
 
-            return redirect()->route('login')->with('success', 'Successfully registered!');
+            return redirect()->route('login')->with('success', __('Successfully registered!'));
         } else {
-            return redirect()->back(422)->with('error', 'Failed to register!');
+            return redirect()->back(422)->with('error', __('Failed to register!'));
         }
     }
 
@@ -130,9 +130,9 @@ class AccountController extends Controller
                 'email' => $request->input('email'),
             ]);
 
-            return redirect()->back()->with('success', 'Successfully saved!');
+            return redirect()->back()->with('success', __('Successfully saved!'));
         } else {
-            return redirect()->back(422)->with('error', 'Failed to save!');
+            return redirect()->back(422)->with('error', __('Failed to save!'));
         }
     }
 
