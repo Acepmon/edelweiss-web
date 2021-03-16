@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MaintenanceController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::post('maintenance/up', [MaintenanceController::class, 'up'])->name('api.maintenance.up');
+Route::post('maintenance/down', [MaintenanceController::class, 'down'])->name('api.maintenance.down');
+Route::post('maintenance/check', [MaintenanceController::class, 'check'])->name('api.maintenance.check');
