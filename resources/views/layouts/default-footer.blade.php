@@ -46,8 +46,8 @@
 
                             <ul class="list-icon">
                                 {{-- <li><i class="fa fa-map-marker-alt"></i> <strong>Gardenia, LLC.</strong><br>5th Khoroo, 15th Micro District <br>Peace Avenue 52<br>Ulaanbaatar</li> --}}
-                                <li><i class="fa fa-phone"></i> (976) 8811-5505 </li>
-                                <li><i class="far fa-envelope"></i> <a href="mailto:info@gardenia.mn">info@gardenia.mn</a> </li>
+                                <li><i class="fa fa-phone"></i> 7507-3333 </li>
+                                <li><i class="far fa-envelope"></i> <a href="mailto:info@edelweissflower.mn">info@edelweissflower.mn</a> </li>
                             </ul>
 
                             @include('layouts.footer-item-newsletter')
