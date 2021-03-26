@@ -45,7 +45,7 @@
                         <div class="col-lg-5">
 
                             <ul class="list-icon">
-                                {{-- <li><i class="fa fa-map-marker-alt"></i> <strong>Gardenia, LLC.</strong><br>5th Khoroo, 15th Micro District <br>Peace Avenue 52<br>Ulaanbaatar</li> --}}
+                                {{-- <li><i class="fa fa-map-marker-alt"></i> <strong>UNSU Co.,Ltd.</strong><br>5th Khoroo, 15th Micro District <br>Peace Avenue 52<br>Ulaanbaatar</li> --}}
                                 <li><i class="fa fa-phone"></i> 7507-3333 </li>
                                 <li><i class="far fa-envelope"></i> <a href="mailto:info@edelweissflower.mn">info@edelweissflower.mn</a> </li>
                             </ul>

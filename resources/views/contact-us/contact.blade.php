@@ -9,10 +9,9 @@
                 <div class="row m-t-40">
                     <div class="col-lg-6">
                         <address>
-                            <strong>Gardenia, LLC.</strong><br>
-                            5th Khoroo, 15th Micro District<br>
-                            Peace Avenue 52<br>
-                            Ulaanbaatar
+                            <strong>UNSU Co.,Ltd.</strong><br>
+                            19A-C Olympic Street, Sukhbaatar district 1, <br>
+                            Ulaanbaatar, 14241, Mongolia
                         </address>
                     </div>
                 </div>
